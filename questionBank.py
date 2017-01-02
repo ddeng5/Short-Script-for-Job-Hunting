@@ -16,29 +16,39 @@ def mainMenu():
     print("     1. Understanding banking and suggested answers")
 
     print("")
-    print("Enter q at any time to exit the question bank")
-    category = input()
+    print("TYPE q AT ANYTIME TO EXIT THE QUESTION BANK")
+    print("")
+    print("")
+    category = input("Enter a number: ")
     return category
 
 
 
 def understandingBanking():
     #generate random question number
-    qNum = randint(1,1)
+    qNum = 1
 
     if qNum == 1:
         print("")
-        print("You’ve never worked in finance before. How much do you know about what bankers actually do?")
+        print("You have never worked in finance before. How much do you know about what bankers actually do?")
         #ask the user if they would like to see the answer
-        choice = input("Would you like to see the answer (y/n)?")
-        if choice == "y":
+        choice = raw_input("Would you like to see the answer (y/n)?")
+        if (choice == "y"):
             print("")
             print("Acknowledge that you haven't worked in the field before but you've done your research and you've talked to people in the industry.")
             print("Bankers advise companies on transactions - buying, selling companies and raising capital. Day-to-day work includes creating presentations, financial analysis and marketing material such as Executive Summaries.")
+            print("")
+            print("")
+            print("")
+            
+        #press any button to continue
+        raw_input("Press any button to continue")
 
 
 
 while (loggedIn):
+    #clear screen
+    os.system('cls' if os.name == 'nt' else 'clear')
     category = mainMenu()
 
     #check if the user is exiting
@@ -48,4 +58,5 @@ while (loggedIn):
 
     else:
         #questions for Understanding Banking
-        if (category == 1):
+        if category == 1:
+            understandingBanking()
